@@ -1,0 +1,42 @@
+@use "../utils/mixins" as *;
+
+.promo {
+  align-items: flex-end;
+  @include media(lg) {
+    flex-direction: column-reverse;
+    max-width: 534px;
+  }
+  &__image {
+    max-width: 520px;
+    margin: 0 40px 0 0;
+    @include media(lg) {
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__info {
+    flex: 1;
+    @include media(lg) {
+      margin: 0 0 20px 0;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    line-height: 129%;
+    letter-spacing: 0.44px;
+    margin: 0 0 24px 0;
+    font-weight: 600;
+  }
+  &__desc {
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: 0.443077px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

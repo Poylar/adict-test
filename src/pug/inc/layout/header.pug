@@ -1,0 +1,35 @@
+- 
+	var nav = [
+		{href : '#how' , text: 'Как это работает?'},
+		{href: '#whom' , text : 'Для кого'},
+		{href: '#case' , text: 'Кейсы'}, 
+		{href: '#tariffs' , text : 'Тарифы'}, 
+		{href: '#security' , text: 'Безопасность'}
+		]
+
+header.header
+	.header__inner.container.row.space-between.align-center
+		.header__logo.logo 
+			a(href="/").logo__link
+				img(src="/src/assets/images/logo.svg" alt="Логотип").logo__image
+		nav.header__nav.nav-menu
+			ul.nav-list.row
+				each items in nav 
+					li.nav-list__item
+						a.nav-list__link(href=items.href)= items.text
+		nav.header__lang-nav.lang
+			span.lang__item.lang__item--current
+				a.lang__link(hreflang="ru" href="/" lang="ru") RU
+			span.lang__item
+				a.lang__link(hreflang="en" href="/en" lang="en") EN
+		button.header__btn.btn.btn--secondary
+			a.btn__link(href="#join") Подключиться
+		.header__mobile-nav-btn.mobile-nav-btn.hidden-desktop.js-open-nav
+			+sprite('mobile-btn' , '27' , '13')
+	.mobile-nav-wrapper.js-mobile-nav
+		nav.header__mobile-nav.mobile-nav.hidden-desktop.col.align-center
+			ul.mobile-nav-list 
+				each items in nav 
+					li.mobile-nav-list__item
+						a.mobile-nav-list__link(href=items.href)= items.text
+			.mobile-nav__btn.btn.btn--primary Вход

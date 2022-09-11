@@ -1,0 +1,14 @@
+- 
+  var obj = [{src: '/src/assets/images/how-this-works/money.svg',desc: 'Подключите свой банковский счет'},
+    {src: '/src/assets/images/how-this-works/select.svg',desc: 'Выберите, куда и кому отправлять информацию'},
+    {src: '/src/assets/images/how-this-works/notif.svg',desc: 'Получайте информацию о поступивших оплатах'},]
+
+section.section.content.lines-bg#how
+  .container.how-works.sq-wrapper 
+    h2.section-title Как это работает
+    .sq-wrapper__inner.sq
+      each val in obj
+        .sq__item.item.col.align-center
+          .item__image 
+            img(src=val.src alt="Деньги")
+          p.item__desc= val.desc

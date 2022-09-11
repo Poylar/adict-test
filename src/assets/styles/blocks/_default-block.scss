@@ -1,0 +1,64 @@
+@use "../utils/mixins" as *;
+
+.default-block {
+  $gap: 47px;
+  @include media(lg) {
+    flex-direction: column-reverse;
+    $gap: 0;
+  }
+  &--reversed {
+    flex-direction: row-reverse;
+    @include media(lg) {
+      flex-direction: column-reverse;
+    }
+    .default-block__info {
+      padding: 0 0 0 $gap;
+    }
+    .desc {
+      max-width: 534px;
+    }
+  }
+  &__info {
+    flex: 1;
+    padding: 0 $gap 0 0;
+  }
+
+  .desc {
+    font-size: 24px;
+    line-height: 142%;
+    letter-spacing: 0.713846px;
+    margin: 0 0 40px 0;
+    @include media(lg) {
+      font-size: 18px;
+    }
+    &__text {
+      margin: 0 0 30px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  .form-simple {
+    max-width: 440px;
+    width: 100%;
+    @include media(lg) {
+      margin: 0 auto;
+    }
+  }
+  .image {
+    max-width: 460px;
+    flex: 1;
+    @include media(lg) {
+      margin: 0 0 46px 0;
+    }
+    @include media(sm) {
+      max-width: 190px;
+    }
+    &__src {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

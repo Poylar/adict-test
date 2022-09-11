@@ -1,0 +1,8 @@
+form.form-simple.js-form-simple(action="/?")
+  label.form-simple__label.js-label-input
+    input.form-simple__input( placeholder="Введите email" data-label="Email" type="email" class=className ? className : 'form-simple__input--blue-theme') 
+    span.form-simple__success-window.success
+      span.success__icon 
+        +sprite('check')
+      span.success__text  Проверьте e-mail!
+  button.form-simple__btn.btn.btn--primary Узнать

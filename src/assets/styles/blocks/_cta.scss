@@ -1,0 +1,53 @@
+@use "../utils/mixins" as *;
+
+.cta-container {
+  position: relative;
+  z-index: 2;
+  @include media(lg) {
+    max-width: 640px;
+  }
+}
+.cta {
+  padding: 60px 94px;
+  background: var(--lt-blue);
+  background-image: url("../images/bg-lines.svg");
+  background-repeat: no-repeat;
+  background-size: 347px;
+  background-position: 90% 20px;
+  @include media(lg) {
+    flex-direction: column;
+    background-image: none;
+  }
+  @include media(sm) {
+    padding: 60px 15px;
+    margin: 0 -15px;
+  }
+  &__title {
+    flex: 1;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 115%;
+    letter-spacing: 0.985946px;
+    margin: 0;
+    @include media(lg) {
+      text-align: center;
+      margin: 0 0 24px 0;
+    }
+    @include media(sm) {
+      font-size: 28px;
+      margin: 0 0 12px 0;
+    }
+  }
+  &__form {
+    flex: 1;
+  }
+  &__desc {
+    margin: 0 0 60px 0;
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: 0.443077px;
+    @include media(lg) {
+      text-align: center;
+    }
+  }
+}

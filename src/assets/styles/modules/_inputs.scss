@@ -1,0 +1,31 @@
+.form-default {
+  max-width: 440px;
+  width: 100%;
+  &__label {
+    margin: 0 0 20px 0;
+  }
+  &__input,
+  &__textarea {
+    background: var(--white);
+    padding: 12px 20px;
+    border-radius: 40px;
+    box-sizing: border-box;
+    border: 1px solid var(--lt-blue-2);
+    width: 100%;
+    &.validate-error {
+      border-color:red;
+    }
+    &::placeholder {
+      letter-spacing: 0.443077px;
+      color: var(--blue);
+      opacity: 0.6;
+    }
+  }
+  &__textarea {
+    resize: none;
+    border-radius: 20px;
+  }
+  &__submit {
+    align-self: flex-start;
+  }
+}

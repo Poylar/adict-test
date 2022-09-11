@@ -1,0 +1,36 @@
+
+section.section.content.container
+  h2.section-title Банки и интеграции
+  .scope
+    .scope__item.banks
+      h5.scope__title Банки
+      .banks__list.list
+        .list__item 
+          img.list__image(src="/src/assets/images/banks/tochka.png" alt="Банк точка")
+        .list__item 
+          img.list__image(src="/src/assets/images/banks/tinkoff.png" alt="Банк тинькофф")
+        .list__item 
+          img.list__image(src="/src/assets/images/banks/modul.png" alt="Банк модуль")
+      .banks__extra.extra
+        .extra__item.item
+          span.item__icon 
+            +sprite('plus')
+          .item__image.image
+            img.image__src(src="/src/assets/images/csv.svg" alt="")
+          .item__text Загрузка из 
+            strong 1С
+    .scope__item.integration 
+      h5.scope__title Интеграции
+      .integration__item.item 
+        .item__icon.icon
+          img.icon__src(src="/src/assets/images/integration/bell.svg" alt="Колокольчик")
+        .item__text Push-web уведомления
+      .integration__item.item 
+        .item__icon.icon
+          img.icon__src(src="/src/assets/images/integration/email.svg" alt="Колокольчик")
+        .item__text E-mail уведомления
+      .integration__item.item 
+        .item__icon.icon
+          img.icon__src(src="/src/assets/images/integration/telegram.svg" alt="Колокольчик")
+        .item__text Telegram
+

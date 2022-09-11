@@ -1,0 +1,98 @@
+@use "../utils/mixins" as *;
+
+.scope {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  @include media(lg) {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  &__item {
+    border: 1px solid var(--blue-border);
+    padding: 20px 45px;
+    transition: box-shadow 0.5s ease;
+    @include media(sm) {
+      padding: 16px;
+    }
+    &:hover {
+      box-shadow: 1px 1px 20px -9px #00000040;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 156%;
+    letter-spacing: 0.443077px;
+    margin: 0 0 20px 0;
+    color: #3898fe80;
+    @include media(md) {
+      margin: 0 0 10px 0;
+    }
+  }
+  .list {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 10px 30px;
+    @include media(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    &__item {
+      max-width: 180px;
+      width: 100%;
+    }
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .extra {
+    padding: 40px 0 12px 0;
+    border-top: 1px solid var(--blue-border);
+
+    .item {
+      display: flex;
+      align-items: center;
+      &__icon {
+        margin: 0 14px 0 0;
+      }
+    }
+
+    .image {
+      max-width: 40px;
+      margin: 0 10px 0 0;
+      &__src {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .integration {
+    .item {
+      display: flex;
+      align-items: center;
+      margin: 0 0 30px 0;
+      @include media(md) {
+        margin: 0 0 20px 0;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      &__icon {
+        width: 74px;
+        margin: 0 20px 0 0;
+        @include media(sm) {
+          width: 37px;
+          margin: 0 10px 0 0;
+        }
+      }
+      &__text {
+        letter-spacing: 0.443077px;
+      }
+    }
+  }
+}

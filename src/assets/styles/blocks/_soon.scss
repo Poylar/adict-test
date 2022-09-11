@@ -1,0 +1,135 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+$padding-left: 58px;
+.soon {
+  overflow: hidden;
+  transition: height 0.5s ease;
+  &__item {
+    padding: 50px 0 50px 0;
+    border-bottom: 1px solid var(--blue-border);
+    box-sizing: border-box;
+    @include media(lg) {
+      flex-direction: column;
+      padding: 50px 17%;
+    }
+    @include media(sm) {
+      padding: 30px 0 30px 0;
+    }
+    &:first-child {
+      padding: 0 0 50px 0;
+      @include media(lg) {
+        padding: 0 17% 50px;
+      }
+      @include media(sm) {
+        padding: 0 0 30px;
+      }
+    }
+  }
+  .item {
+    &__title {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 129%;
+      letter-spacing: 0.44px;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 60px 0 0;
+      @include media(lg) {
+        margin: 0 0 20px 0;
+        text-align: center;
+      }
+      @include media(sm) {
+        $padding-left: 30px;
+        padding: 0 0 0 $padding-left;
+        font-size: 18px;
+        text-align: left;
+        font-weight: 600;
+        margin: 0 0 16px 0;
+      }
+    }
+    &__info {
+      flex: 1;
+      padding: 0 90px 0 0;
+      @include media(lg) {
+        padding: 0;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  .list {
+    margin: 0;
+    padding: 0;
+    &__item {
+      line-height: 156%;
+      letter-spacing: 0.443077px;
+      margin: 0 0 0.5rem 0;
+      list-style: none;
+      position: relative;
+      padding: 0 0 0 $padding-left;
+      @include media(sm) {
+        $padding-left: 30px;
+        padding: 0 0 0 $padding-left;
+        font-size: 16px;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      &:before {
+        content: "";
+        height: 3px;
+        width: 43px;
+        background: linear-gradient(-90deg, #00b8f0 0%, #00b8f0 0.01%, #b2eefc 73.96%);
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        @include media(sm) {
+          width: 21px;
+        }
+      }
+    }
+  }
+  .images {
+    padding: 0 0 0 $padding-left;
+    margin: 20px 0 0;
+    @include media(lg) {
+      padding: 0;
+      justify-content: center;
+    }
+    @include media(sm) {
+      $padding-left: 30px;
+      padding: 0 0 0 $padding-left;
+      margin: 16px 0 0;
+      justify-content: flex-start;
+    }
+    &__item {
+      margin: 0 20px 0 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    &__src {
+      object-fit: contain;
+      max-width: 200px;
+      max-height: 50px;
+    }
+  }
+}
+
+.soon-container {
+  &__more {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 136%;
+    letter-spacing: 0.44px;
+    text-align: center;
+    margin: 40px 0 0;
+    cursor: pointer;
+    @include media(sm) {
+      font-size: 18px;
+    }
+  }
+}

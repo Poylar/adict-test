@@ -1,0 +1,132 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+.cases-container {
+  &__pagination {
+    --swiper-theme-color: var(--blue);
+    --swiper-pagination-bullet-size: 12px;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+
+    .swiper-pagination-bullet-active {
+      --swiper-pagination-bullet-size: 16px;
+    }
+    .swiper-pagination-bullet {
+      border: 1px solid var(--blue-border);
+    }
+  }
+}
+.cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  &.cases-slider {
+    @include media(md) {
+      overflow: visible;
+    }
+  }
+  &__item {
+    padding: 30px 23px;
+    border: 1px solid var(--blue-border);
+    overflow: hidden;
+    position: relative;
+    transition: background 0.5s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    &:hover {
+      background: var(--lt-blue);
+      &:after {
+        transform: translate(0%);
+      }
+      .link {
+        &__icon {
+          transform: translateX(4px);
+        }
+      }
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: $blue-gradient;
+      will-change: transform;
+      transition: transform 0.5s ease;
+      transform: translateX(-100%);
+    }
+  }
+  .scopes {
+    .item {
+      max-height: 40px;
+      max-width: 80px;
+      margin: 0 12px 0 0;
+      @include media(sm) {
+        max-width: 40px;
+        max-height: 25px;
+        margin: 0 8px 0 0;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      &__image {
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  &__info {
+    margin: 84px 0 0;
+    @include media(lg) {
+      margin: 50px 0 0;
+    }
+    @include media(sm) {
+      margin: 14px 0 0;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 136%;
+    letter-spacing: 0.44px;
+    margin: 0 0 20px 0;
+    @include media(sm) {
+      font-size: 18px;
+    }
+  }
+  &__link {
+    color: var(--blue);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      top: 0;
+      left: 0;
+    }
+  }
+  .link {
+    display: flex;
+    &__icon {
+      margin: 0 0 0 6px;
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// vendor
+@use "vendor/normalize";
+// utils
+@use "utils/vars";
+@use "utils/mixins";
+@use "utils/fonts";
+// modules
+@use "modules/buttons";
+@use "modules/inputs";
+@use "modules/keyframes";
+
+// layout
+@use "layout/base";
+@use "layout/header";
+@use "layout/footer";
+
+// pages
+@use "pages/home";
+// blocks
+@use "blocks/form-simple";
+@use "blocks/promo-block";
+@use "blocks/how-works";
+@use "blocks/cta";
+@use "blocks/scope";
+@use "blocks/target";
+@use "blocks/cases";
+@use "blocks/default-block";
+@use "blocks/soon";
+@use "blocks/security";

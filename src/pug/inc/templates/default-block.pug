@@ -1,0 +1,18 @@
+block type
+  -var classes =''
+  -var title = 'Тарифы'
+  -var desc = ['Everypay находится в стадии закрытого beta-теста, но у вас есть возможность присоединиться к тестированию сервиса.' , 'Для компаний, участвующих в тестировании, сервис  навсегда бесплатен. Напишите нам и мы с вами свяжемся.']
+  -var form =  true;
+  -var img = '/src/assets/images/ruble.svg'
+  -var id = 'tariffs'
+section.section.content.container(id=id)
+  .default-block(class=classes ? classes : 'row align-center')
+    .default-block__info.col.default-block__col 
+      h2.section-title.section-title--block.default-block__title= title
+      .default-block__desc.desc
+        each val in desc
+          p.desc__text= val
+      if form 
+        include ../blocks/form-simple.pug
+    .default-block__image.image.default-block__col
+      img.image__src(src=img alt="Рубль")
