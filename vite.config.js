@@ -5,7 +5,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import viteImagemin from 'vite-plugin-imagemin'
 
 export default defineConfig({
-  base: "/adict-test/",
+  base: "/",
   build: {
     outDir: "build",
     assetsDir: "assets",
